@@ -1,0 +1,27 @@
+<form [formGroup]="form">
+  <fieldset>
+    <legend>Create Address</legend>
+    <div class="form-field">
+      <div class="form-field">
+        <label>Address number</label>
+        <input name="addressNumber" formControlName="addressNumber" type="number">
+      </div>
+      <div class="form-field">
+        <label>Address street</label>
+        <input name="addressStreet" formControlName="addressStreet">
+      </div>
+      <div class="form-field">
+        <label>Address postcode</label>
+        <input name="addressPostcode" formControlName="addressPostcode" type="number">
+      </div>
+      <div class="form-field">
+        <label>Address city</label>
+        <input name="addressCity" formControlName="addressCity">
+      </div>
+      <div class="form-field">
+        <label>Address country</label>
+        <input name="addressCountry" formControlName="addressCountry">
+      </div>
+    </div>
+  </fieldset>
+</form>

@@ -11,6 +11,12 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {AuthInterceptor} from './interceptors/auth-interceptor';
 import { RegisterComponent } from './components/register/register.component';
+import { AssociationComponent } from './components/association/association.component';
+import { SponsorComponent } from './components/sponsor/sponsor.component';
+import { EquipmentComponent } from './components/equipment/equipment.component';
+import { AssociationFormComponent } from './components/forms/association-form/association-form.component';
+import { SponsorFormComponent } from './components/forms/sponsor-form/sponsor-form.component';
+import { AddressFormComponent } from './components/forms/address-form/address-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,13 @@ import { RegisterComponent } from './components/register/register.component';
     LoginComponent,
     LogoutComponent,
     DashboardComponent,
-    RegisterComponent
+    RegisterComponent,
+    AssociationComponent,
+    SponsorComponent,
+    EquipmentComponent,
+    AssociationFormComponent,
+    SponsorFormComponent,
+    AddressFormComponent
   ],
   imports: [
     BrowserModule,

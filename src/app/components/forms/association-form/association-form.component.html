@@ -1,0 +1,18 @@
+<form [formGroup]="form">
+  <fieldset>
+    <legend>Create Association</legend>
+    <div class="form-field">
+      <label>Name</label>
+      <input name="name" formControlName="name">
+    </div>
+    <app-address-form></app-address-form>
+    <div class="form-field">
+      <label>Phone:</label>
+      <input name="phone" formControlName="phone">
+    </div>
+  </fieldset>
+  <div class="form-buttons">
+    <button class="button button-primary"
+            (click)="registerAssociation()">Register Association</button>
+  </div>
+</form>

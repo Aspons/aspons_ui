@@ -1,4 +1,5 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Association} from '../../model/association';
 import {DataService} from '../../services/data/data.service';
 
 @Component({
@@ -6,14 +7,15 @@ import {DataService} from '../../services/data/data.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements AfterViewInit {
+export class DashboardComponent implements OnInit {
+
+  public associationsList: Association[];
 
   constructor(private dataService: DataService) { }
 
-  ngAfterViewInit(): void {
-    this.dataService.getData('users').subscribe(users => {
-      console.log(users);
+  ngOnInit() {
+    this.dataService.getData('associationsUser').subscribe(associations => {
+      console.log(associations);
     });
   }
-
 }

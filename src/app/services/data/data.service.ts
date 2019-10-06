@@ -18,8 +18,4 @@ export class DataService {
   postData(url: string, element: Object) {
     return this.httpClient.post(this.constantsService.getApiUrl() + url, element);
   }
-
-  putData(url: string, element: Object) {
-    return this.httpClient.put(this.constantsService.getApiUrl() + url, element);
-  }
 }

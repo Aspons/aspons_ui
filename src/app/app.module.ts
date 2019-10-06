@@ -6,25 +6,35 @@ import { AuthenticationComponent } from './components/authentication/authenticat
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import {RouterModule} from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {AuthInterceptor} from './interceptors/auth-interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticationComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '**', component: AuthenticationComponent }
+      { path: '', component: AuthenticationComponent }
+      , { path: 'dashboard', component: DashboardComponent }
     ])
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

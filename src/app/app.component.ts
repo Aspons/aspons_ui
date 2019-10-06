@@ -21,6 +21,10 @@ export class AppComponent implements OnInit, OnDestroy{
     );
   }
 
+  public getIsPageLoaded() {
+    return this.isPageLoaded;
+  }
+
   ngOnInit() {
     this.loaderService.setPageIsLoaded(true);
   }

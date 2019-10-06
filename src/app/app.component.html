@@ -1,6 +1,6 @@
-<div class="app" [hidden]="!!isPageLoaded">
+<div class="app" [hidden]="!isPageLoaded">
   <router-outlet></router-outlet>
 </div>
-<ng-container *ngIf="!!isPageLoaded">
+<ng-container *ngIf="!isPageLoaded">
   <img src="../assets/imgs/loading.jpg" class="loading center" />
 </ng-container>

@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import 'rxjs/add/operator/catch';
 import {Router} from '@angular/router';
 import 'rxjs-compat/add/observable/of';
+import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -14,7 +15,7 @@ export class AuthInterceptor implements HttpInterceptor {
       this.router.navigateByUrl('');
       return Observable.of(err.message);
     }
-    return Observable.throw(err);
+    return ErrorObservable.create('error');;
   }
 
   intercept(req: HttpRequest<any>,

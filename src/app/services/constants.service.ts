@@ -9,6 +9,7 @@ export class ConstantsService {
 
   constructor() {
     this.apiUrl = 'http://51.158.107.133:8080/aspons/api/';
+    // this.apiUrl = 'http://localhost:8080/aspons/api/';
   }
 
   public getApiUrl(): string {

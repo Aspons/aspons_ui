@@ -12,7 +12,7 @@ export class DataService {
   }
 
   getData(url: string) {
-    return this.httpClient.get(this.constantsService.getApiUrl() + url);
+    return this.httpClient.get(this.constantsService.getApiUrl() + url + '?page=0&size=100');
   }
 
   postData(url: string, element: Object) {

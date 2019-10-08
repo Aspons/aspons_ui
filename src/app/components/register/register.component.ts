@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DataService} from '../../services/data/data.service';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'app-register',
@@ -27,7 +28,7 @@ export class RegisterComponent {
     const val = this.form.value;
 
     if (val.firstName && val.lastName && val.username && val.password && val.passwordConfirm) {
-      this.dataService.postData('user', {
+      this.dataService.postData<User>('user', {
         firstName: val.firstName,
         lastName: val.lastName,
         username: val.username,

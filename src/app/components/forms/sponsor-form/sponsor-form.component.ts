@@ -32,7 +32,7 @@ export class SponsorFormComponent implements AfterViewInit{
   registerSponsor() {
     const val = this.form.value;
     if (val.name && val.addressNumber && val.addressStreet && val.addressPostcode && val.addressCity && val.addressCountry && val.phone) {
-      this.dataService.postData('sponsor', {
+      this.dataService.postData('companies', {
         name: val.name
         , phone: val.phone
         , address: {

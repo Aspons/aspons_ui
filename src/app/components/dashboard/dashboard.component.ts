@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getData('associationsUser').subscribe(associations => {
+    this.dataService.getData('associations/_me').subscribe(associations => {
       console.log(associations);
     });
   }

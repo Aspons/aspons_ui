@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import {ConstantsService} from '../constants.service';
-import {HttpClient} from '@angular/common/http';
+import {HttpBackend, HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class UnauthDataService {
 
   constructor(private constantsService: ConstantsService
-              , private httpClient: HttpClient) {
+              , private httpClient: HttpClient
+              , private httpBackend: HttpBackend) {
+    this.httpClient = new HttpClient(this.httpBackend);
   }
 
   getData<T>(url: string) {

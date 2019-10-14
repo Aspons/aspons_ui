@@ -34,7 +34,7 @@ export class AssociationFormComponent implements AfterViewInit {
     console.log(val);
     if (val.name && val.addressForm.addressNumber && val.addressForm.addressStreet && val.addressForm.addressPostcode
       && val.addressForm.addressCity && val.addressForm.addressCountry && val.phone) {
-      this.dataService.postData('association', {
+      this.dataService.postData('associations', {
         name: val.name
         , phone: val.phone
         , address: {
